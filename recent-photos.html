@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Penn Rec – Recent Photos</title>
+  <title>Penn Rec – Intramural Sports Gallery</title>
 
   <style>
     body {
@@ -15,49 +15,58 @@
     h2 {
       text-align: center;
       color: #00356b;
+      margin-bottom: 30px;
     }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 15px;
-      margin-top: 20px;
     }
     .gallery img {
       width: 100%;
       border-radius: 6px;
+      object-fit: cover;
     }
   </style>
 </head>
 
 <body>
-  <h2>Most Recent Photos</h2>
+  <h2>Intramural Sports – Photo Gallery</h2>
 
-  <div class="gallery" id="gallery"></div>
+  <div class="gallery">
 
-  <script>
-    // Penn Rec Flickr user ID
-    const userId = "200833995@N03";
+    <!-- Paste your static Flickr URLs below -->
+    <img src="https://live.staticflickr.com/65535/55180037353_d7ea740f33.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180037488_a7ed84fec6.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180037098_75425640bd.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180126134_b46c55fbff.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180038393_f221147ef1.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180267620_d694b3cff4.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55179866591_333a6a6765.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180035053_8b705aca77.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180268575_2a43b1eabc.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180124549_9e3cb2c9ea.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180124424_d7a440a75f.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180036648_3cbfd5b1a3.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55178980082_15e1bcb00d.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180313165_07fffb5c77_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180166739_f316fa12ef_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55179910006_6226811bfc_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180312830_9db33b623b_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180077948_7c290dfbbd_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180165724_5f5c75db62_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180311880_1ed8c46d59_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180077358_272988a8e9_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55179020907_04110b0ecb_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180076653_939bb3b0a4_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180076478_7c11d9b949_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180310360_4834321a8e_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180163659_c9009f2897_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55180161084_e1e3e87e76_w.jpg" alt="">
+    <img src="https://live.staticflickr.com/65535/55179016727_3b2994d01a_w.jpg" alt="">
 
-    // CORS-friendly proxy for Flickr public feed
-    const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(
-      "https://www.flickr.com/services/feeds/photos_public.gne?id=" +
-        userId +
-        "&format=json&nojsoncallback=1"
-    )}`;
+    <!-- Add more URLs here anytime -->
+  </div>
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const gallery = document.getElementById("gallery");
-
-        data.items.forEach(item => {
-          const img = document.createElement("img");
-          img.src = item.media.m.replace("_m.jpg", "_b.jpg");
-          img.alt = item.title;
-          gallery.appendChild(img);
-        });
-      })
-      .catch(err => console.error("Error loading Flickr images:", err));
-  </script>
 </body>
 </html>
