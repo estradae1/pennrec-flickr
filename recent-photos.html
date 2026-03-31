@@ -35,13 +35,12 @@
   <div class="gallery" id="gallery"></div>
 
   <script>
-    // ⭐ Insert your API key here (NOT the secret)
+    // ⭐ Insert your API key here
     const apiKey = "d85d085486580613d1ded12f5beb861c";
 
-    // Penn Rec Flickr user ID
-    const userId = "196566834@N06";
+    // ⭐ Correct Penn Rec Flickr user ID
+    const userId = "200833995@N03";
 
-    // Pull the 50 most recent public photos
     const url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${apiKey}&user_id=${userId}&per_page=50&format=json&nojsoncallback=1`;
 
     fetch(url)
