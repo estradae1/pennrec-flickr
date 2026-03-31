@@ -1,60 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Delaware State Forest 2026 – Penn Campus Rec</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delaware State Forest 2026</title>
+
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background: #f7f7f7;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
     }
     h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #01256E; /* Penn Blue */
+      text-align: center;
+      color: #00356b;
     }
     .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
     }
     .gallery img {
-        width: 100%;
-        border-radius: 6px;
-        object-fit: cover;
+      width: 100%;
+      border-radius: 6px;
     }
-</style>
+  </style>
 </head>
+
 <body>
+  <h2>Delaware State Forest 2026</h2>
 
-<h2>Delaware State Forest 2026</h2>
-<div class="gallery" id="gallery"></div>
+  <div class="gallery" id="gallery"></div>
 
-<script>
-// Flickr album info
-const albumId = "72177720332766904";
-const userId = "198463419@N08";
-const apiKey = "d85d085486580613d1ded12f5beb861c";
+  <script>
+    // 
+    const apiKey = "d85d085486580613d1ded12f5beb861c";
 
-// Flickr API endpoint
-const url = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=${albumId}&user_id=${userId}&format=json&nojsoncallback=1`;
-
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    const photos = data.photoset.photo;
-    const gallery = document.getElementById("gallery");
-
-    photos.forEach(photo => {
-      const src = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
-      const img = document.createElement("img");
-      img.src = src;
-      gallery.appendChild(img);
-    });
-  });
-</script>
-
-</body>
-</html>
+    // Penn Rec Flickr album ID
+    const albumId = "72177720332766904";
+    const userId = "196566
