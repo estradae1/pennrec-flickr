@@ -38,8 +38,12 @@
     // Penn Rec Flickr user ID
     const userId = "200833995@N03";
 
-    // Flickr public feed (no API key required)
-    const url = `https://www.flickr.com/services/feeds/photos_public.gne?id=${userId}&format=json&nojsoncallback=1`;
+    // CORS-friendly proxy for Flickr public feed
+    const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(
+      "https://www.flickr.com/services/feeds/photos_public.gne?id=" +
+        userId +
+        "&format=json&nojsoncallback=1"
+    )}`;
 
     fetch(url)
       .then(response => response.json())
@@ -48,7 +52,7 @@
 
         data.items.forEach(item => {
           const img = document.createElement("img");
-          img.src = item.media.m.replace("_m.jpg", "_b.jpg"); // bigger image
+          img.src = item.media.m.replace("_m.jpg", "_b.jpg");
           img.alt = item.title;
           gallery.appendChild(img);
         });
