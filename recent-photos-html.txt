@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penn Rec – Recent Photos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h2 {
+      text-align: center;
+      color: #00356b;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Most Recent Photos</h2>
+
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    // ⭐ Insert your API key here (NOT the secret)
+    const apiKey = "d85d085486580613d1ded12f5beb861c";
+
+    // Penn Rec Flickr user ID
+    const userId = "196566834@N06";
+
+    // Pull the 50 most recent public photos
+    const url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${apiKey}&user_id=${userId}&per_page=50&format=json&nojsoncallback=1`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const photos = data.photos.photo;
+        const gallery = document.getElementById("gallery");
+
+        photos.forEach(photo => {
+          const imgUrl = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
+          const img = document.createElement("img");
+          img.src = imgUrl;
+          img.alt = photo.title;
+          gallery.appendChild(img);
+        });
+      })
+      .catch(err => console.error("Error loading Flickr images:", err));
+  </script>
+</body>
+</html>
