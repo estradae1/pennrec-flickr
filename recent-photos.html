@@ -35,25 +35,21 @@
   <div class="gallery" id="gallery"></div>
 
   <script>
-    // ⭐ Insert your API key here
-    const apiKey = "d85d085486580613d1ded12f5beb861c";
-
-    // ⭐ Correct Penn Rec Flickr user ID
+    // Penn Rec Flickr user ID
     const userId = "200833995@N03";
 
-    const url = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${apiKey}&user_id=${userId}&per_page=50&format=json&nojsoncallback=1`;
+    // Flickr public feed (no API key required)
+    const url = `https://www.flickr.com/services/feeds/photos_public.gne?id=${userId}&format=json&nojsoncallback=1`;
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const photos = data.photos.photo;
         const gallery = document.getElementById("gallery");
 
-        photos.forEach(photo => {
-          const imgUrl = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
+        data.items.forEach(item => {
           const img = document.createElement("img");
-          img.src = imgUrl;
-          img.alt = photo.title;
+          img.src = item.media.m.replace("_m.jpg", "_b.jpg"); // bigger image
+          img.alt = item.title;
           gallery.appendChild(img);
         });
       })
