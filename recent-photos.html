@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Penn Rec – Intramural Sports Carousel</title>
+  <title>Penn Rec – Intramural Sports Gallery</title>
 
   <style>
     body {
@@ -12,83 +12,147 @@
       padding: 20px;
       background: #f5f5f5;
     }
-
     h2 {
       text-align: center;
       color: #00356b;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
-
-    .carousel {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 10px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
     }
-
-    .slides {
-      display: flex;
+    .gallery img {
       width: 100%;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .slides img {
-      width: 100%;
-      flex-shrink: 0;
-      scroll-snap-align: center;
-      border-radius: 10px;
+      border-radius: 6px;
       object-fit: cover;
+      transition: transform 0.2s ease;
     }
-
-    /* Hide scrollbar */
-    .slides::-webkit-scrollbar {
-      display: none;
+    .gallery img:hover {
+      transform: scale(1.03);
     }
   </style>
 </head>
 
 <body>
-  <h2>Intramural Sports – Photo Carousel</h2>
+  <h2>Intramural Sports – Photo Gallery</h2>
 
-  <div class="carousel">
-    <div class="slides">
+  <div class="gallery">
 
-      <!-- Your static Flickr images -->
-      <img src="https://live.staticflickr.com/65535/55180037353_d7ea740f33.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180037488_a7ed84fec6.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180037098_75425640bd.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180126134_b46c55fbff.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180038393_f221147ef1.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180267620_d694b3cff4.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55179866591_333a6a6765.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180035053_8b705aca77.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180268575_2a43b1eabc.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180124549_9e3cb2c9ea.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180124424_d7a440a75f.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180036648_3cbfd5b1a3.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55178980082_15e1bcb00d.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180313165_07fffb5c77_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180166739_f316fa12ef_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55179910006_6226811bfc_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180312830_9db33b623b_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180077948_7c290dfbbd_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180165724_5f5c75db62_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180311880_1ed8c46d59_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180077358_272988a8e9_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55179020907_04110b0ecb_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180076653_939bb3b0a4_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180076478_7c11d9b949_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180310360_4834321a8e_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180163659_c9009f2897_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55180161084_e1e3e87e76_w.jpg" alt="">
-      <img src="https://live.staticflickr.com/65535/55179016727_3b2994d01a_w.jpg" alt="">
+    <!-- CLICKABLE IMAGES GENERATED FROM STATIC URL PHOTO IDs -->
 
-    </div>
+    <a href="https://www.flickr.com/photos/penncampusrec/55180037353/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180037353_d7ea740f33.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180037488/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180037488_a7ed84fec6.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180037098/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180037098_75425640bd.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180126134/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180126134_b46c55fbff.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180038393/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180038393_f221147ef1.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180267620/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180267620_d694b3cff4.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55179866591/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55179866591_333a6a6765.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180035053/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180035053_8b705aca77.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180268575/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180268575_2a43b1eabc.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180124549/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180124549_9e3cb2c9ea.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180124424/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180124424_d7a440a75f.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180036648/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180036648_3cbfd5b1a3.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55178980082/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55178980082_15e1bcb00d.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180313165/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180313165_07fffb5c77_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180166739/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180166739_f316fa12ef_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55179910006/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55179910006_6226811bfc_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180312830/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180312830_9db33b623b_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180077948/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180077948_7c290dfbbd_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180165724/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180165724_5f5c75db62_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180311880/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180311880_1ed8c46d59_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180077358/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180077358_272988a8e9_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55179020907/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55179020907_04110b0ecb_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180076653/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180076653_939bb3b0a4_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180076478/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180076478_7c11d9b949_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180310360/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180310360_4834321a8e_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180163659/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180163659_c9009f2897_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55180161084/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55180161084_e1e3e87e76_w.jpg">
+    </a>
+
+    <a href="https://www.flickr.com/photos/penncampusrec/55179016727/in/album-72177720332818390" target="_blank">
+      <img src="https://live.staticflickr.com/65535/55179016727_3b2994d01a_w.jpg">
+    </a>
+
   </div>
 
 </body>
